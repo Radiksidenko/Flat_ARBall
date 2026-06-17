@@ -9,16 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        ARViewContainer()
+            .ignoresSafeArea()
+//        ARViewControllerOld()
     }
 }
 
-#Preview {
-    ContentView()
+struct ARViewContainer: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> ARViewController {
+        ARViewController()
+    }
+    func updateUIViewController(_ uiViewController: ARViewController, context: Context) {}
 }
